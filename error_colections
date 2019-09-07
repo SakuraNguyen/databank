@@ -1,0 +1,7 @@
+Fatal error:
+Atom 65362 in multiple T-Coupling groups (1 and 2)
+
+Solution: This error happens because one group is present in two groups,  this means that the first atom in your topology is in two temperature-coupling groups. The T-coupling groups are defined in your .mdp file. Obviously you can't want to constrain the same atom to two different temperatures, so grompp doesn't let you have an atom in two temperature-coupling groups. Probably you need to read the manual section on tcgroups in 7.3 and adjust your .mdp file.
+Technically, the user might make the mistake as using "gmx make_ndx", just carefully generate the index.ndx file again.
+
+
